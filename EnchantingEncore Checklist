@@ -5,7 +5,7 @@ Bookshelf Detection
 
 Chiseled Bookshelves
 - Add to enchantment level when full.
-- Enchantments in enchanted books in chiseled bookshelves increase the likelihood that enchantment will be selected as an enchantment, with enchantment power of those enchantments further increasing that likelihood.
+- Enchantments in enchanted books in chiseled bookshelves increase the likelihood that enchantment will be selected as an enchantment, with enchantment power of those enchantments further increasing that likelihood, or the weight.
 - The weight of that enchantment is additive, so 100% chance for an enchantment is never achieved, but you can get to practically 100%.
 
 Deciding Enchantment Levels
@@ -26,4 +26,8 @@ Deciding Enchantment Levels
     - The new enchantment level cap is 50.
 
 As For The Enchantments Themselves
-    This is gonna take a while
+- This is gonna take a while.
+- A lot of enchanting parameters are defined via data pack. Will keep vanilla values vanilla and add on top of them for higher modified enchantment levels, used to pick enchantments.
+- Will have to go down the list of enchantments and test different parameters for higher level enchant implementation
+- Treasure enchantments will be available at level 45, with higher power treasure enchants available at level 50. Weights and modified enchantment levels will need to be defined for those.
+- Will need to look at side effects of modifying vanilla modified enchantment levels and weights (enchantment providers to things other than the enchantment table).
