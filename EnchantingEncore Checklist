@@ -1,0 +1,29 @@
+Bookshelf Detection
+- Up to 3 air blocks between bookshelf and enchanting table.
+- Detectable from below.
+- Full chiseled bookshelves count toward enchantment level.
+
+Chiseled Bookshelves
+- Add to enchantment level when full.
+- Enchantments in enchanted books in chiseled bookshelves increase the likelihood that enchantment will be selected as an enchantment, with enchantment power of those enchantments further increasing that likelihood.
+- The weight of that enchantment is additive, so 100% chance for an enchantment is never achieved, but you can get to practically 100%.
+
+Deciding Enchantment Levels
+    Vanilla enchantment level calculations
+    - b = number of nearby bookshelves
+    - Base enchantment level available (base) = (randomInt(1,8) + floor(b / 2) + randomInt(0,b))
+    - Top slot enchantment level = floor(max(base / 3, 1))
+    - Middle slot enchantment level = floor((base × 2) / 3 + 1)
+    - Bottom slot enchantment level = floor(max(base,b × 2))
+
+    New enchantment level calculations
+    - b = number of nearby bookshelves
+    - Base enchantment level available (base) = (randomInt(1,4) + floor(b / 2))
+    - Top slot enchantment level = floor(max(base / 3, 1))
+    - Middle slot enchantment level = floor((base × 2) / 3 + 1)
+    - Bottom slot enchantment level = floor(max(base,b))
+    - The effect is that each bookshelf adds a maximum enchantment level, except for the first 8 bookshelves where the base equation is used, starting at a base level of 4 and adding a level every 2 bookshelves.
+    - The new enchantment level cap is 50.
+
+As For The Enchantments Themselves
+    This is gonna take a while
