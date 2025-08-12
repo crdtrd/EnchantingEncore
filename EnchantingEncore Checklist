@@ -1,9 +1,7 @@
 Bookshelf Detection
-☐ Up to 3 air blocks between bookshelf and enchanting table.
-☐ Detectable from below.
-    + Lnet/minecraft/block/EnchantingTableBlock;canAccessPowerProvider(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/math/BlockPos;)Z
+☑ Middle 3x3 column no detection. Every where else in a 9x9 cube centered on the table there is detection.
 ☐ Full chiseled bookshelves count toward enchantment level.
-    ☐ add to BlockTags.ENCHANTMENT_POWER_TRANSMITTER, but only if full
+    ☐ add to BlockTags.ENCHANTMENT_POWER_PROVIDER, but only if full.
 
 Chiseled Bookshelves
 ☐ Add to enchantment level when full.
