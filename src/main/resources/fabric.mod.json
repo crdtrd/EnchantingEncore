@@ -12,7 +12,7 @@
     "client": [
     ],
     "main": [
-      "com.drtdrc.enchantingencore.Enchantingencore"
+      "com.drtdrc.enchantingencore.EnchantingEncore"
     ]
   },
   "mixins": [

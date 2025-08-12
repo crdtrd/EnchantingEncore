@@ -2,7 +2,7 @@ package com.drtdrc.enchantingencore;
 
 import net.fabricmc.api.ModInitializer;
 
-public class Enchantingencore implements ModInitializer {
+public class EnchantingEncore implements ModInitializer {
 
     @Override
     public void onInitialize() {

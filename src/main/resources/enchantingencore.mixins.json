@@ -4,6 +4,7 @@
   "package": "com.drtdrc.enchantingencore.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "EnchantingTableBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1
