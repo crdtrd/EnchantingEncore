@@ -4,9 +4,9 @@ Bookshelf Detection
 - Full chiseled bookshelves count toward enchantment level.
 
 Chiseled Bookshelves
-- Add to enchantment level when full.
-- Enchantments in enchanted books in chiseled bookshelves increase the likelihood that enchantment will be selected as an enchantment, with enchantment power of those enchantments further increasing that likelihood, or the weight.
-- The weight of that enchantment is additive, so 100% chance for an enchantment is never achieved, but you can get to practically 100%.
+☐ Add to enchantment level when full.
+☐ Enchantments in enchanted books in chiseled bookshelves increase the likelihood that enchantment will be selected as an enchantment, with enchantment power of those enchantments further increasing that likelihood, or the weight.
+☐ 100% chance for an enchantment must never be achieved, but you can get very close.
 
 Deciding Enchantment Levels
     Vanilla enchantment level calculations
@@ -16,7 +16,7 @@ Deciding Enchantment Levels
     - Middle slot enchantment level = floor((base × 2) / 3 + 1)
     - Bottom slot enchantment level = floor(max(base,b × 2))
 
-    New enchantment level calculations
+  ☐ New enchantment level calculations
     - b = number of nearby bookshelves
     - Base enchantment level available (base) = (randomInt(1,4) + floor(b / 2))
     - Top slot enchantment level = floor(max(base / 3, 1))
@@ -27,7 +27,8 @@ Deciding Enchantment Levels
 
 As For The Enchantments Themselves
 - This is gonna take a while.
-- A lot of enchanting parameters are defined via data pack. Will keep vanilla values vanilla and add on top of them for higher modified enchantment levels, used to pick enchantments.
-- Will have to go down the list of enchantments and test different parameters for higher level enchant implementation
-- Treasure enchantments will be available at level 45, with higher power treasure enchants available at level 50. Weights and modified enchantment levels will need to be defined for those.
-- Will need to look at side effects of modifying vanilla modified enchantment levels and weights (enchantment providers to things other than the enchantment table).
+☐ A lot of enchanting parameters are defined via data pack. Will keep vanilla values vanilla and add on top of them for higher modified enchantment levels, used to pick enchantments.
+☐ Will have to go down the list of enchantments and test different parameters for higher level enchant implementation
+☐ Treasure enchantments will be available at level 45, with higher power treasure enchants available at level 50. Weights and modified enchantment levels will need to be defined for those.
+☐ Will need to look at side effects of modifying vanilla modified enchantment levels and weights (enchantment providers to things other than the enchantment table).
+☐ Pretty much most if not all the implementation of higher level enchantments will be done via datapack. All we need is in there, or if I'm feeling spicy I could code it, but who in their right mind would do that? Datapack is way easier. We'll take it case by case.
