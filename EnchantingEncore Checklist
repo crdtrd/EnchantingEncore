@@ -32,3 +32,47 @@ As For The Enchantments Themselves
 ☐ Treasure enchantments will be available at level 45, with higher power treasure enchants available at level 50. Weights and modified enchantment levels will need to be defined for those.
 ☐ Will need to look at side effects of modifying vanilla modified enchantment levels and weights (enchantment providers to things other than the enchantment table).
 ☐ Pretty much most if not all the implementation of higher level enchantments will be done via datapack. All we need is in there, or if I'm feeling spicy I could code it, but who in their right mind would do that? Datapack is way easier. We'll take it case by case.
+☐ Add enchanted books for higher level enchants
+
+☑ aqua-affinity.json
+☑ bane_of_arthropods.json
+☑ binding_curse.json
+☑ blast_protection.json
+☑ breach.json
+☑ channeling.json
+☑ density.json
+☑ depth_strider.json
+☑ efficiency.json
+☑ feather_falling.json
+☑ fire_aspect.json
+☑ fire_protection.json
+☑ flame.json
+fortune.json - CHECK IMPLEMENTATION
+☑ frost_walker.json
+☑ impaling.json
+☑ infinity.json
+☑ knockback.json
+☑ looting.json
+☑ loyalty.json
+☑ luck_of_the_sea.json
+☑ lure.json
+☑ mending.json
+☑ multishot.json
+☑ piercing.json
+☑ power.json
+☑ projectile_protection.json
+☑ protection.json
+☑ punch.json
+☑ quick_charge.json
+☑ respiration.json
+☑ riptide.json
+☑ sharpness.json
+☑ silk_touch.json
+☑ smite.json
+☑ soul_speed.json
+☑ sweeping_edge.json
+☑ swift_sneak.json
+☑ thorns.json
+☑ unbreaking.json
+☑ vanishing_curse.json
+☑ wind_burst.json
