@@ -1,10 +1,10 @@
 Bookshelf Detection
 ☑ Middle 3x3 column no detection. Every where else in a 9x9 cube centered on the table there is detection.
-☐ Full chiseled bookshelves count toward enchantment level.
-    ☐ add to BlockTags.ENCHANTMENT_POWER_PROVIDER, but only if full.
+☑ Full chiseled bookshelves count toward enchantment level.
+    ☑ add to BlockTags.ENCHANTMENT_POWER_PROVIDER, but only if full.
 
 Chiseled Bookshelves
-☐ Add to enchantment level when full.
+☑ Add to enchantment level when full.
 ☐ Enchantments in enchanted books in chiseled bookshelves increase the likelihood that enchantment will be selected as an enchantment, with enchantment power of those enchantments further increasing that likelihood, or the weight.
 ☐ 100% chance for an enchantment must never be achieved, but you can get very close.
 
@@ -16,7 +16,7 @@ Deciding Enchantment Levels
     - Middle slot enchantment level = floor((base × 2) / 3 + 1)
     - Bottom slot enchantment level = floor(max(base,b × 2))
 
-  ☐ New enchantment level calculations
+  ☑ New enchantment level calculations
     - b = number of nearby bookshelves
     - Base enchantment level available (base) = (randomInt(1,4) + floor(b / 2))
     - Top slot enchantment level = floor(max(base / 3, 1))
