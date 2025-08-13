@@ -41,7 +41,6 @@ public abstract class EnchantingTableBlockMixin extends BlockWithEntity {
                 .filter(pos -> Math.abs(pos.getX()) > 1 || Math.abs(pos.getZ()) > 1)
                 .map(BlockPos::toImmutable)
                 .toList();
-        EnchantingEncore.LOGGER.info(POWER_PROVIDER_OFFSETS.toString());
     }
 
     @Inject(
@@ -51,17 +50,18 @@ public abstract class EnchantingTableBlockMixin extends BlockWithEntity {
     )
     private static void canAccessPowerProviderModified(World world, BlockPos tablePos, BlockPos providerOffset, CallbackInfoReturnable<Boolean> cir) {
 
-        BlockState state = world.getBlockState(tablePos.add(providerOffset.getX() / 2, providerOffset.getY(), providerOffset.getZ() / 2));
-        boolean canTransmit = state.isIn(BlockTags.ENCHANTMENT_POWER_TRANSMITTER) || state.isIn(BlockTags.ENCHANTMENT_POWER_PROVIDER);
-
         BlockPos providerPos = tablePos.add(providerOffset);
         BlockState provider = world.getBlockState(providerPos);
 
-        boolean isProviderCandidate =
-                provider.isIn(BlockTags.ENCHANTMENT_POWER_PROVIDER)
-                        || (provider.isOf(Blocks.CHISELED_BOOKSHELF) && isChiseledBookshelfFull(world, providerPos));
+        boolean isProvider = provider.isIn(BlockTags.ENCHANTMENT_POWER_PROVIDER)
+                || (provider.isOf(Blocks.CHISELED_BOOKSHELF) && isChiseledBookshelfFull(world, providerPos));
 
-        cir.setReturnValue(isProviderCandidate && canTransmit); // logic is kinda wrong
+        BlockState state = world.getBlockState(tablePos.add(providerOffset.getX() / 2, providerOffset.getY(), providerOffset.getZ() / 2));
+        boolean canTransmit = state.isIn(BlockTags.ENCHANTMENT_POWER_TRANSMITTER)
+                || state.isIn(BlockTags.ENCHANTMENT_POWER_PROVIDER)
+                || state.isOf(Blocks.CHISELED_BOOKSHELF);
+
+        cir.setReturnValue(isProvider && canTransmit);
     }
 
     @Unique
