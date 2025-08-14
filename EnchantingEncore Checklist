@@ -33,22 +33,24 @@ As For The Enchantments Themselves
 ☐ Will need to look at side effects of modifying vanilla modified enchantment levels and weights (enchantment providers to things other than the enchantment table).
 ☐ Pretty much most if not all the implementation of higher level enchantments will be done via datapack. All we need is in there, or if I'm feeling spicy I could code it, but who in their right mind would do that? Datapack is way easier. We'll take it case by case.
 ☐ Add enchanted books for higher level enchants
+☐ Need to tweak protection factor calculations to hit near 100% at max level.
+☐ Remove attribute limits as needed
 
-☑ aqua-affinity.json
+☑ aqua-affinity.json - DON'T WORK
 ☑ bane_of_arthropods.json
 ☑ binding_curse.json
-☑ blast_protection.json
+☑ blast_protection.json - DON'T WORK: Armor damage reduction is capped 80%
 ☑ breach.json
 ☑ channeling.json
 ☑ density.json
-☑ depth_strider.json
+☑ depth_strider.json - DON'T WORK: water_movement_efficiency attribute capped at 1
 ☑ efficiency.json
 ☑ feather_falling.json
 ☑ fire_aspect.json
-☑ fire_protection.json
+☑ fire_protection.json - DON'T WORK: Armor damage reduction is capped 80%
 ☑ flame.json
 fortune.json - CHECK IMPLEMENTATION
-☑ frost_walker.json
+☑ frost_walker.json BOOST TO LEVEL 5, ADJUST LEVEL COSTS
 ☑ impaling.json
 ☑ infinity.json
 ☑ knockback.json
@@ -60,8 +62,8 @@ fortune.json - CHECK IMPLEMENTATION
 ☑ multishot.json
 ☑ piercing.json
 ☑ power.json
-☑ projectile_protection.json
-☑ protection.json
+☑ projectile_protection.json - DON'T WORK: Armor damage reduction is capped 80%
+☑ protection.json - DON'T WORK: Armor damage reduction is capped 80%
 ☑ punch.json
 ☑ quick_charge.json
 ☑ respiration.json
