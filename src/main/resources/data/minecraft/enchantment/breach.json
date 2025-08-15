@@ -19,13 +19,13 @@
   },
   "exclusive_set": "#minecraft:exclusive_set/damage",
   "max_cost": {
-    "base": 14,
-    "per_level_above_first": 10
+    "base": 16,
+    "per_level_above_first": 11
   },
-  "max_level": 7,
+  "max_level": 6,
   "min_cost": {
     "base": 5,
-    "per_level_above_first": 9
+    "per_level_above_first": 11
   },
   "slots": [
     "mainhand"
