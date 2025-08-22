@@ -38,7 +38,7 @@ As For The Enchantments Themselves
 ☑ aqua-affinity.json
 ☑ bane_of_arthropods.json
 ☑ binding_curse.json
-blast_protection.json - DON'T WORK: Armor damage reduction is capped 80%
+☑ blast_protection.json
 ☑ breach.json
 ☑ channeling.json
 ☑ density.json
@@ -46,7 +46,7 @@ depth_strider.json - DON'T WORK: water_movement_efficiency attribute capped at 1
 ☑ efficiency.json
 ☑ feather_falling.json
 ☑ fire_aspect.json
-fire_protection.json - DON'T WORK: Armor damage reduction is capped 80%
+☑ fire_protection.json
 ☑ flame.json
 ☑ fortune.json
 ☑ frost_walker.json
@@ -61,8 +61,8 @@ fire_protection.json - DON'T WORK: Armor damage reduction is capped 80%
 ☑ multishot.json
 ☑ piercing.json
 ☑ power.json
-projectile_protection.json - DON'T WORK: Armor damage reduction is capped 80%
-protection.json - DON'T WORK: Armor damage reduction is capped 80%
+☑ projectile_protection.json
+☑ protection.json
 ☑ punch.json
 ☑ quick_charge.json
 ☑ respiration.json
