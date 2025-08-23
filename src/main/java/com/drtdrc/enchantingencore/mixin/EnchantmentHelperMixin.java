@@ -2,6 +2,7 @@
 package com.drtdrc.enchantingencore.mixin;
 
 import com.drtdrc.enchantingencore.BiasContext;
+import com.drtdrc.enchantingencore.EnchantingEncore;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.EnchantableComponent;
 import net.minecraft.enchantment.Enchantment;
@@ -47,11 +48,6 @@ public abstract class EnchantmentHelperMixin {
         }
     }
 
-    /** Call the real getPossibleEntries (bypasses our redirect). */
-    @Invoker("getPossibleEntries")
-    private static List<EnchantmentLevelEntry> ee$origGetPossibleEntries(int level, ItemStack stack, Stream<RegistryEntry<Enchantment>> possibleEnchantments) {
-        throw new AssertionError();
-    }
 
     /**
      * Vanilla: Weighting.getRandom(random, list, EnchantmentLevelEntry::getWeight)
@@ -76,7 +72,7 @@ public abstract class EnchantmentHelperMixin {
 
             // +1 per stored level across reachable chiseled bookshelves:
             int bonus = BiasContext.bonus(entry.enchantment());
-
+            // EnchantingEncore.LOGGER.info(String.valueOf(Math.max(1, base + bonus)));
             return Math.max(1, base + bonus);
         };
     }
