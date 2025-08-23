@@ -6,7 +6,9 @@
   "mixins": [
     "DamageUtilMixin",
     "EnchantingTableBlockMixin",
-    "EnchantmentHelperMixin"
+    "EnchantmentHelperMixin",
+    "EntityAttributesMixin",
+    "LivingEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -27,13 +27,13 @@ Deciding Enchantment Levels
 
 As For The Enchantments Themselves
 - This is gonna take a while.
-☐ A lot of enchanting parameters are defined via data pack. Will keep vanilla values vanilla and add on top of them for higher modified enchantment levels, used to pick enchantments.
-☐ Will have to go down the list of enchantments and test different parameters for higher level enchant implementation
-☐ Treasure enchantments will be available at level 45, with higher power treasure enchants available at level 50. Weights and modified enchantment levels will need to be defined for those.
-☐ Will need to look at side effects of modifying vanilla modified enchantment levels and weights (enchantment providers to things other than the enchantment table).
-☐ Pretty much most if not all the implementation of higher level enchantments will be done via datapack. All we need is in there, or if I'm feeling spicy I could code it, but who in their right mind would do that? Datapack is way easier. We'll take it case by case.
-☐ Need to tweak protection factor calculations to hit near 100% at max level.
-☐ Remove attribute limits as needed
+☑ A lot of enchanting parameters are defined via data pack. Will keep vanilla values vanilla and add on top of them for higher modified enchantment levels, used to pick enchantments.
+☑  Will have to go down the list of enchantments and test different parameters for higher level enchant implementation
+☑ Treasure enchantments will be available at level 45, with higher power treasure enchants available at level 50. Weights and modified enchantment levels will need to be defined for those.
+☑ Will need to look at side effects of modifying vanilla modified enchantment levels and weights (enchantment providers to things other than the enchantment table).
+☑ Pretty much most if not all the implementation of higher level enchantments will be done via datapack. All we need is in there, or if I'm feeling spicy I could code it, but who in their right mind would do that? Datapack is way easier. We'll take it case by case.
+☑ Need to tweak protection factor calculations to hit near 100% at max level.
+☑ Remove attribute limits as needed
 
 ☑ aqua-affinity.json
 ☑ bane_of_arthropods.json
@@ -42,7 +42,7 @@ As For The Enchantments Themselves
 ☑ breach.json
 ☑ channeling.json
 ☑ density.json
-depth_strider.json - DON'T WORK: water_movement_efficiency attribute capped at 1
+☑ depth_strider.json
 ☑ efficiency.json
 ☑ feather_falling.json
 ☑ fire_aspect.json
