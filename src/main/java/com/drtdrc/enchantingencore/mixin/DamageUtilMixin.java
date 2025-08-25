@@ -1,0 +1,22 @@
+package com.drtdrc.enchantingencore.mixin;
+
+import com.drtdrc.enchantingencore.EnchantingEncore;
+import net.minecraft.entity.DamageUtil;
+import net.minecraft.util.math.MathHelper;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+@Mixin(DamageUtil.class)
+public class DamageUtilMixin {
+
+    @Inject(method = "getInflictedDamage", at = @At(value="HEAD"), cancellable=true)
+    private static void onGetInflictedDamage(float damageDealt, float protection, CallbackInfoReturnable<Float> cir) {
+        // calculates damage dealt after going through armor, aka how much is covered by prot
+        // Special prots reach 99%, and maxed normal prot is 95%. Normal prot adds 1.2 EPF per level, buffed from 1 per level in vanilla.
+        float f = MathHelper.clamp(protection, 0.0F, 35.0F);
+        cir.setReturnValue( damageDealt * (1.0F - f / 35.35F) );
+        EnchantingEncore.LOGGER.info(String.valueOf(f));
+    }
+}

@@ -4,6 +4,12 @@
   "package": "com.drtdrc.enchantingencore.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "DamageUtilMixin",
+    "EnchantingTableBlockMixin",
+    "EnchantmentHelperMixin",
+    "EnchantmentScreenHandlerMixin",
+    "EntityAttributesMixin",
+    "LivingEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
