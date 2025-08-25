@@ -5,9 +5,10 @@ Bookshelf Detection
 
 Chiseled Bookshelves
 ☑ Add to enchantment level when full.
-☐ Enchantments in enchanted books in chiseled bookshelves increase the likelihood that enchantment will be selected as an enchantment, with enchantment power of those enchantments further increasing that likelihood, or the weight.
-☐ 100% chance for an enchantment must never be achieved, but you can get very close.
-☐ Consider how enchantment conflicts play into this. Higher weight enchantments should override.
+☑ Enchantments in enchanted books in chiseled bookshelves increase the likelihood that enchantment will be selected as an enchantment, with enchantment power of those enchantments further increasing that likelihood, or the weight.
+☑ 100% chance for an enchantment must never be achieved, but you can get very close.
+☑ Consider how enchantment conflicts play into this. Higher weight enchantments should override.
+☑ 1 weight is added per chiseled bookshelf housing 1 of the desired enchantment in each book
 
 Deciding Enchantment Levels
     Vanilla enchantment level calculations

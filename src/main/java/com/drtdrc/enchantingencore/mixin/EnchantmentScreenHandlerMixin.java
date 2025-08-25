@@ -10,6 +10,7 @@ import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(EnchantmentScreenHandler.class)
 public abstract class EnchantmentScreenHandlerMixin {
@@ -30,6 +31,16 @@ public abstract class EnchantmentScreenHandlerMixin {
     /** Clear it right after we’re done. */
     @Inject(method = "onContentChanged", at = @At("TAIL"))
     private void clearBias(Inventory inventory, CallbackInfo ci) {
-        BiasContext.clear();
+        BiasContext.deactivate();
+    }
+
+    @Inject( method = "onButtonClick", at = @At("HEAD") )
+    private void prepareBiasOnApply(net.minecraft.entity.player.PlayerEntity player, int id, CallbackInfoReturnable<Boolean> cir) {
+        context.run(BiasContext::compute);
+    }
+
+    @Inject( method = "onButtonClick", at = @At("RETURN") )
+    private void clearBiasOnApply(net.minecraft.entity.player.PlayerEntity player, int id, CallbackInfoReturnable<Boolean> cir) {
+        BiasContext.deactivate();
     }
 }

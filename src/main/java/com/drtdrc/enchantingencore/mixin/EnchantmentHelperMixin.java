@@ -15,7 +15,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
-import org.spongepowered.asm.mixin.gen.Invoker;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.List;
@@ -72,9 +71,19 @@ public abstract class EnchantmentHelperMixin {
 
             // +1 per stored level across reachable chiseled bookshelves:
             int bonus = BiasContext.bonus(entry.enchantment());
-            // EnchantingEncore.LOGGER.info(String.valueOf(Math.max(1, base + bonus)));
+            EnchantingEncore.LOGGER.info(String.valueOf(Math.max(1, base + bonus)));
             return Math.max(1, base + bonus);
         };
+    }
+
+    @Inject(
+            method = "generateEnchantments",
+            at = @At(
+                    value = "RETURN"
+            )
+    )
+    private static void onGenerateEnchantmentsReturn(Random random, ItemStack stack, int level, Stream<RegistryEntry<Enchantment>> possibleEnchantments, CallbackInfoReturnable<List<EnchantmentLevelEntry>> cir) {
+        EnchantingEncore.LOGGER.info(cir.getReturnValue().toString());
     }
 
 //    /**
