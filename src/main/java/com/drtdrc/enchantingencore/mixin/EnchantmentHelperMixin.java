@@ -2,14 +2,11 @@
 package com.drtdrc.enchantingencore.mixin;
 
 import com.drtdrc.enchantingencore.BiasContext;
-import com.drtdrc.enchantingencore.EnchantingEncore;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.EnchantableComponent;
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnchantmentLevelEntry;
 import net.minecraft.item.ItemStack;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.math.random.Random;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -17,9 +14,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import java.util.List;
 import java.util.function.ToIntFunction;
-import java.util.stream.Stream;
 
 @Mixin(EnchantmentHelper.class)
 public abstract class EnchantmentHelperMixin {
@@ -71,47 +66,8 @@ public abstract class EnchantmentHelperMixin {
 
             // +1 per stored level across reachable chiseled bookshelves:
             int bonus = BiasContext.bonus(entry.enchantment());
-            EnchantingEncore.LOGGER.info(String.valueOf(Math.max(1, base + bonus)));
+            //EnchantingEncore.LOGGER.info(String.valueOf(Math.max(1, base + bonus)));
             return Math.max(1, base + bonus);
         };
     }
-
-    @Inject(
-            method = "generateEnchantments",
-            at = @At(
-                    value = "RETURN"
-            )
-    )
-    private static void onGenerateEnchantmentsReturn(Random random, ItemStack stack, int level, Stream<RegistryEntry<Enchantment>> possibleEnchantments, CallbackInfoReturnable<List<EnchantmentLevelEntry>> cir) {
-        EnchantingEncore.LOGGER.info(cir.getReturnValue().toString());
-    }
-
-//    /**
-//     * In your Yarn 1.21.8+build.1, generateEnchantments(...) calls:
-//     * getPossibleEntries(int, ItemStack, Stream<RegistryEntry<Enchantment>>)
-//     * We redirect that single invocation and adjust weights.
-//     */
-//    @Redirect(
-//            method = "generateEnchantments",
-//            at = @At(
-//                    value = "INVOKE",
-//                    target = "Lnet/minecraft/enchantment/EnchantmentHelper;getPossibleEntries(ILnet/minecraft/item/ItemStack;Ljava/util/stream/Stream;)Ljava/util/List;"
-//            )
-//    )
-//    private static List<EnchantmentLevelEntry> ee$biasPossibleEntries(int level, ItemStack stack, Stream<RegistryEntry<Enchantment>> possibleEnchantments) {
-//        List<EnchantmentLevelEntry> base = ee$origGetPossibleEntries(level, stack, possibleEnchantments);
-//        if (base.isEmpty()) return base;
-//
-//        List<EnchantmentLevelEntry> out = new ArrayList<>(base.size());
-//        for (EnchantmentLevelEntry e : base) {
-//            // Accessors in 1.21.x Yarn are record-like: enchantment(), level(), getWeight()
-//            RegistryEntry<Enchantment> ench = e.enchantment();
-//            int baseWeight = e.getWeight();
-//            int bonus = BiasContext.bonus(ench);
-//            int total = Math.max(1, baseWeight + bonus);
-//
-//            out.add(new EnchantmentLevelEntry(ench, e.level(), ));
-//        }
-//        return out;
-//    }
 }

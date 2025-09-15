@@ -11,6 +11,5 @@ public class EnchantingEncore implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        LOGGER.info("EnchantingEncore Init");
     }
 }
