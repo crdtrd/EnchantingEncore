@@ -6,11 +6,9 @@
   "description": "",
   "authors": [],
   "contact": {},
-  "license": "All-Rights-Reserved",
+  "license": "MIT",
   "environment": "*",
   "entrypoints": {
-    "client": [
-    ],
     "main": [
       "com.drtdrc.enchantingencore.EnchantingEncore"
     ]
