@@ -3,9 +3,12 @@
   "id": "enchantingencore",
   "version": "${version}",
   "name": "EnchantingEncore",
-  "description": "",
-  "authors": [],
-  "contact": {},
+  "icon": "assets/enchantingencore/icon.png",
+  "description": "A server side vanilla+ enchantment system mod. Allows higher level enchantments and treasure enchantments via enchantment table.",
+  "authors": ["crdtrd"],
+  "contact": {
+    "issues": "https://github.com/crdtrd/EnchantingEncore"
+  },
   "license": "MIT",
   "environment": "*",
   "entrypoints": {

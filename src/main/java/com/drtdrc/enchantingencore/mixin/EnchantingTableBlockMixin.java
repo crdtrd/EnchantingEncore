@@ -1,6 +1,5 @@
 package com.drtdrc.enchantingencore.mixin;
 
-import com.drtdrc.enchantingencore.EnchantingEncore;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.Blocks;
