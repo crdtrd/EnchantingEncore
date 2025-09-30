@@ -78,7 +78,7 @@ public abstract class EnchantingTableBlockMixin extends BlockWithEntity {
     // particles
     @Inject(method = "getTicker", at = @At("RETURN"), cancellable = true)
     private <T extends BlockEntity> void onGetTicker(World world, BlockState state, BlockEntityType<T> type, CallbackInfoReturnable<BlockEntityTicker<T>> cir) {
-        if (world.isClient) return;
+        if (world.isClient()) return;
         if (type != BlockEntityType.ENCHANTING_TABLE) return;
 
         BlockEntityTicker<T> existing = cir.getReturnValue();
@@ -116,9 +116,9 @@ public abstract class EnchantingTableBlockMixin extends BlockWithEntity {
             double ty = offset.getY() - random.nextFloat() - 1.0f;
             double tz = offset.getZ() + random.nextFloat() - 0.5;
 
-            double vx = tx - ox;
-            double vy = ty - oy;
-            double vz = tz - oz;
+//            double vx = tx - ox;
+//            double vy = ty - oy;
+//            double vz = tz - oz;
 
             // count = 1; the last param is speed (unused for ENCHANT when velocities provided)
             world.spawnParticles(ParticleTypes.ENCHANT, ox, oy, oz, 0, tx, ty, tz, 1.0);

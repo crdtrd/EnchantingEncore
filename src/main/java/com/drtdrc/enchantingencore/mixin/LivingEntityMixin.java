@@ -21,7 +21,7 @@ public abstract class LivingEntityMixin {
     @Inject(method = "travel(Lnet/minecraft/util/math/Vec3d;)V", at = @At("HEAD"))
     private void applyWaterSpeedBoost(Vec3d input, CallbackInfo ci) {
         LivingEntity self = (LivingEntity)(Object)this;
-        if (self.getWorld().isClient()) return; // server-side only
+        if (self.getEntityWorld().isClient()) return; // server-side only
 
 
         var inst = self.getAttributeInstance(EntityAttributes.MOVEMENT_SPEED);
@@ -37,7 +37,7 @@ public abstract class LivingEntityMixin {
 
             if (bonus > 0.0) {
                 double k = 0.70;
-                inst.addTemporaryModifier(new net.minecraft.entity.attribute.EntityAttributeModifier(
+                inst.addTemporaryModifier(new EntityAttributeModifier(
                         WATER_DS_BOOST_ID,
                         k * bonus, // e.g., DS5 with hRaw≈1.67 → ~0.5 * k
                         EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE
